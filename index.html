@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Cultural</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fff);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 25px;
+      background: #000; /* Bara neagră */
+      color: white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    header img {
+      width: 120px; /* Icon mărit */
+      height: 120px;
+      margin-bottom: 10px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      width: 90%;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #333;
+      font-size: 18px;
+    }
+
+    .question {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    label:hover {
+      background-color: #f1f1f1;
+    }
+
+    .corect {
+      background-color: #c8e6c9 !important; /* verde */
+    }
+
+    .gresit {
+      background-color: #ffcdd2 !important; /* roșu */
+    }
+
+    button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #023e8a;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="icon.png" alt="Icon">
+    <h1>Quiz Cultural General</h1>
+  </header>
+
+  <div class="quiz-container" id="quiz">
+    <!-- Întrebările -->
+    <div class="question" id="q1">
+      <h2>1. Ce compozitor german, deși și-a pierdut auzul, a scris „Simfonia a 9-a”?</h2>
+      <div class="answers" data-correct="Beethoven"></div>
+    </div>
+
+    <div class="question" id="q2">
+      <h2>2. Ce regină a Egiptului Antic a fost cunoscută pentru relațiile cu Cezar și Antoniu?</h2>
+      <div class="answers" data-correct="Cleopatra"></div>
+    </div>
+
+    <div class="question" id="q3">
+      <h2>3. Ce filozof grec a fondat școala „Lyceum”?</h2>
+      <div class="answers" data-correct="Aristotel"></div>
+    </div>
+
+    <div class="question" id="q4">
+      <h2>4. Ce pasăre își poate roti capul până la 270°?</h2>
+      <div class="answers" data-correct="Bufnita"></div>
+    </div>
+
+    <div class="question" id="q5">
+      <h2>5. Ce animal are cea mai mare greutate corporală?</h2>
+      <div class="answers" data-correct="Balena albastra"></div>
+    </div>
+
+    <div class="question" id="q6">
+      <h2>6. Ce insectă poate ridica de 50 de ori propria greutate?</h2>
+      <div class="answers" data-correct="Furnica"></div>
+    </div>
+
+    <div class="question" id="q7">
+      <h2>7. Ce formațiuni montane subacvatice se formează când plăcile tectonice se separă?</h2>
+      <div class="answers" data-correct="Dorsale oceanice"></div>
+    </div>
+
+    <div class="question" id="q8">
+      <h2>8. Care este cel mai adânc punct de pe Pământ?</h2>
+      <div class="answers" data-correct="Fosa Marianelor"></div>
+    </div>
+
+    <div class="question" id="q9">
+      <h2>9. Care este cel mai mare deșert, deși nu e acoperit de nisip?</h2>
+      <div class="answers" data-correct="Antarctica"></div>
+    </div>
+
+    <div class="question" id="q10">
+      <h2>10. Ce țară este faimoasă pentru pizza?</h2>
+      <div class="answers" data-correct="Italia"></div>
+    </div>
+
+    <div class="question" id="q11">
+      <h2>11. În ce țară se dansează flamenco?</h2>
+      <div class="answers" data-correct="Spania"></div>
+    </div>
+
+    <div class="question" id="q12">
+      <h2>12. Ce țară sărbătorește „Ziua Morților”?</h2>
+      <div class="answers" data-correct="Mexic"></div>
+    </div>
+
+    <div class="question" id="q13">
+      <h2>13. Cine a înfăptuit prima unire a Principatelor Române?</h2>
+      <div class="answers" data-correct="Al.I.Cuza"></div>
+    </div>
+
+    <div class="question" id="q14">
+      <h2>14. Care domnitor a fost supranumit „Întemeietorul”?</h2>
+      <div class="answers" data-correct="Basarab I"></div>
+    </div>
+
+    <div class="question" id="q15">
+      <h2>15. Unde s-a declanșat Revoluția industrială?</h2>
+      <div class="answers" data-correct="Anglia"></div>
+    </div>
+
+    <button onclick="verifica()">Verifică răspunsurile</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const raspunsuriCorecte = {
+      q1: "Beethoven",
+      q2: "Cleopatra",
+      q3: "Aristotel",
+      q4: "Bufnita",
+      q5: "Balena albastra",
+      q6: "Furnica",
+      q7: "Dorsale oceanice",
+      q8: "Fosa Marianelor",
+      q9: "Antarctica",
+      q10: "Italia",
+      q11: "Spania",
+      q12: "Mexic",
+      q13: "Al.I.Cuza",
+      q14: "Basarab I",
+      q15: "Anglia"
+    };
+
+    const raspunsuriPosibile = {
+      q1: ["Beethoven", "Mozart", "Bach"],
+      q2: ["Cleopatra", "Nefertiti", "Hatshepsut"],
+      q3: ["Aristotel", "Platon", "Socrate"],
+      q4: ["Bufnita", "Vulturul", "Corbul"],
+      q5: ["Balena albastra", "Elefantul", "Rechinul"],
+      q6: ["Furnica", "Albină", "Gândac"],
+      q7: ["Dorsale oceanice", "Fose oceanice", "Recife"],
+      q8: ["Fosa Marianelor", "Groapa Tonga", "Groapa Java"],
+      q9: ["Antarctica", "Sahara", "Gobi"],
+      q10: ["Italia", "Spania", "Grecia"],
+      q11: ["Spania", "Italia", "Portugalia"],
+      q12: ["Mexic", "Brazilia", "Chile"],
+      q13: ["Mihai Viteazul", "Al.I.Cuza", "Carol I"],
+      q14: ["Basarab I", "Vlad Tepes", "Mircea cel Batran"],
+      q15: ["Anglia", "Franta", "Germania"]
+    };
+
+    function amestecaRaspunsuri(raspunsuri) {
+      for (let i = raspunsuri.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [raspunsuri[i], raspunsuri[j]] = [raspunsuri[j], raspunsuri[i]];
+      }
+      return raspunsuri;
+    }
+
+    function incarcaQuiz() {
+      const intrebari = document.querySelectorAll(".question");
+      
+      intrebari.forEach((q, index) => {
+        const raspunsuri = raspunsuriPosibile[`q${index + 1}`];
+        const raspunsuriAmestecate = amestecaRaspunsuri(raspunsuri);
+
+        const answersContainer = q.querySelector(".answers");
+        answersContainer.innerHTML = ""; // curățăm conținutul anterior
+
+        raspunsuriAmestecate.forEach(raspuns => {
+          const label = document.createElement("label");
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = `q${index + 1}`;
+          input.value = raspuns;
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(raspuns));
+          answersContainer.appendChild(label);
+        });
+      });
+    }
+
+    function verifica() {
+      let scor = 0;
+      const intrebari = document.querySelectorAll(".question");
+
+      intrebari.forEach((q, index) => {
+        const nume = "q" + (index + 1);
+        const raspunsCorect = raspunsuriCorecte[nume];
+
+        q.querySelectorAll("label").forEach(l => l.classList.remove("corect", "gresit"));
+
+        const raspunsSelectat = q.querySelector(`input[name="${nume}"]:checked`);
+        
+        q.querySelectorAll(`input[name="${nume}"]`).forEach(opt => {
+          if (opt.value === raspunsCorect) {
+            opt.parentElement.classList.add("corect");
+          }
+        });
+
+        if (raspunsSelectat) {
+          if (raspunsSelectat.value === raspunsCorect) {
+            scor++;
+          } else {
+            raspunsSelectat.parentElement.classList.add("gresit");
+          }
+        }
+      });
+
+      document.getElementById("result").textContent = `Ai răspuns corect la ${scor} din 15 întrebări.`;
+    }
+
+    window.onload = incarcaQuiz; // Încărcăm întrebările și răspunsurile la încărcarea paginii
+  </script>
+</body>
+</html>
